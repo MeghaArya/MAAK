@@ -11,6 +11,111 @@ import GameplayKit
 
 class GameScene: SKScene {
     
+    
+ 
+    
+ 
+        
+        // 1
+        var player = SKSpriteNode()
+        var player2 = SKSpriteNode()
+        override func didMove(to view: SKView) {
+            
+            // 1
+            backgroundColor = SKColor.white
+            let image = UIImage(named: "Samuel")
+            let texture = SKTexture(image: image!)
+            player = SKSpriteNode(texture: texture)
+            player.position = CGPoint(x: size.width * -0.3, y: size.height * -0.3)
+            addChild(player)
+
+            
+            // 2
+            backgroundColor = SKColor.white
+            _ = UIImage(named: "Samuel")
+            player2 = SKSpriteNode(texture: texture)
+            player2.position = CGPoint(x: size.width * -0.3, y: size.height * -0.1)
+            addChild(player2)
+
+            
+            //3
+            backgroundColor = SKColor.white
+            _ = UIImage(named: "Samuel")
+            player2 = SKSpriteNode(texture: texture)
+            player2.position = CGPoint(x: size.width * -0.3, y: size.height * 0.1)
+            addChild(player2)
+            
+            //4
+            backgroundColor = SKColor.white
+            _ = UIImage(named: "Samuel")
+            player2 = SKSpriteNode(texture: texture)
+            player2.position = CGPoint(x: size.width * 0, y: size.height * 0)
+            addChild(player2)
+            
+            //5
+            backgroundColor = SKColor.white
+            _ = UIImage(named: "Samuel")
+            player2 = SKSpriteNode(texture: texture)
+            player2.position = CGPoint(x: size.width * 0, y: size.height * -0.2)
+            addChild(player2)
+            
+ // 1
+ backgroundColor = SKColor.white
+  _ = UIImage(named: "Samuel")
+ player = SKSpriteNode(texture: texture)
+ player.position = CGPoint(x: size.width * 0.3, y: size.height * -0.3)
+ addChild(player)
+ 
+ 
+ // 2
+ backgroundColor = SKColor.white
+ _ = UIImage(named: "Samuel")
+ player2 = SKSpriteNode(texture: texture)
+ player2.position = CGPoint(x: size.width * 0.3, y: size.height * -0.1)
+ addChild(player2)
+ 
+ 
+ //3
+ backgroundColor = SKColor.white
+ _ = UIImage(named: "Samuel")
+ player2 = SKSpriteNode(texture: texture)
+ player2.position = CGPoint(x: size.width * 0.3, y: size.height * 0.1)
+ addChild(player2)
+            
+ 
+            
+        }
+    
+    
+    
+    
+ //   func addMonster() {
+        
+        // Create sprite
+    //    let monster = SKSpriteNode(imageNamed: "samuel")
+        
+        // Determine where to spawn the monster along the Y axis
+    //    let actualY = random(min: monster.size.height/2, max: size.height - monster.size.height/2)
+        
+        // Position the monster slightly off-screen along the right edge,
+        // and along a random position along the Y axis as calculated above
+  //      monster.position = CGPoint(x: size.width/2 + monster.size.width/2, y: actualY/2)
+        
+        // Add the monster to the scene
+    //    addChild(monster)
+     
+        // Determine speed of the monster
+      //  let actualDuration = random(min: CGFloat(2.0), max: CGFloat(4.0))
+        
+        // Create the actions
+     //   let actionMove = SKAction.move(to: CGPoint(x: -monster.size.width/2, y: actualY),
+     //                                  duration: TimeInterval(actualDuration))
+     //   let actionMoveDone = SKAction.removeFromParent()
+       // monster.run(SKAction.sequence([actionMove, actionMoveDone]))
+ //   }
+   
+ 
+    
     var entities = [GKEntity]()
     var graphs = [String : GKGraph]()
     
@@ -23,7 +128,7 @@ class GameScene: SKScene {
         self.lastUpdateTime = 0
         
         // Get label node from scene and store it for use later
-        self.label = self.childNode(withName: "//helloLabel") as? SKLabelNode
+       // self.label = self.childNode(withName: "//helloLabel") as? SKLabelNode
         if let label = self.label {
             label.alpha = 0.0
             label.run(SKAction.fadeIn(withDuration: 2.0))
