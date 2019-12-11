@@ -11,10 +11,7 @@ import GameplayKit
 
 class GameScene: SKScene {
     
-    
- 
-    
- 
+
         
         // 1
         var player = SKSpriteNode()
@@ -59,32 +56,62 @@ class GameScene: SKScene {
             player2.position = CGPoint(x: size.width * 0, y: size.height * -0.2)
             addChild(player2)
             
- // 1
- backgroundColor = SKColor.white
-  _ = UIImage(named: "Samuel")
- player = SKSpriteNode(texture: texture)
- player.position = CGPoint(x: size.width * 0.3, y: size.height * -0.3)
- addChild(player)
- 
- 
- // 2
- backgroundColor = SKColor.white
- _ = UIImage(named: "Samuel")
- player2 = SKSpriteNode(texture: texture)
- player2.position = CGPoint(x: size.width * 0.3, y: size.height * -0.1)
- addChild(player2)
- 
- 
- //3
- backgroundColor = SKColor.white
- _ = UIImage(named: "Samuel")
- player2 = SKSpriteNode(texture: texture)
- player2.position = CGPoint(x: size.width * 0.3, y: size.height * 0.1)
- addChild(player2)
+             // 6
+             backgroundColor = SKColor.white
+              _ = UIImage(named: "Samuel")
+             player = SKSpriteNode(texture: texture)
+             player.position = CGPoint(x: size.width * 0.3, y: size.height * -0.3)
+             addChild(player)
+            
+            
+             // 7
+             backgroundColor = SKColor.white
+             _ = UIImage(named: "Samuel")
+             player2 = SKSpriteNode(texture: texture)
+             player2.position = CGPoint(x: size.width * 0.3, y: size.height * -0.1)
+             addChild(player2)
+            
+            
+             //8
+             backgroundColor = SKColor.white
+             _ = UIImage(named: "Samuel")
+             player2 = SKSpriteNode(texture: texture)
+             player2.position = CGPoint(x: size.width * 0.3, y: size.height * 0.1)
+             addChild(player2)
             
  
             
         }
+    
+    override func touchesBegan(_ touches: Set<UITouch>,with event: UIEvent?){
+        var a1 : Bool = false
+        var a2 : Bool = false
+        var a3 : Bool = false
+        var a4 : Bool = false
+        var a5 : Bool = false
+        var a6 : Bool = false
+        var a7 : Bool = false
+        var a8 : Bool = false
+        
+        for touch in (touches) {
+            //let location = touch.location(in: self.camera)
+            let location = touch.location(in: self)
+            print("x- \(location.x), y- \(location.y)")
+            
+            if(location.x < -168 && location.y > 0.7){
+                a1 = true
+                print("Left")
+            }
+            /*else if(location.x > ((self.size.width/4))){
+                touchRight = true
+                print("Right")
+            }
+            else {  //x is between -width / 4 and width / 4
+                touchMiddle = true
+                print("Middle")
+            }*/
+        }
+    }
     
     
     
@@ -173,13 +200,13 @@ class GameScene: SKScene {
         }
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    /*override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let label = self.label {
             label.run(SKAction.init(named: "Pulse")!, withKey: "fadeInOut")
         }
         
         for t in touches { self.touchDown(atPoint: t.location(in: self)) }
-    }
+    }*/
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         for t in touches { self.touchMoved(toPoint: t.location(in: self)) }
