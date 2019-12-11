@@ -177,8 +177,9 @@ class GameScene: SKScene {
             let location = touch.location(in: self)
             print("x- \(location.x), y- \(location.y)")
             
+            // col 1
             if (location.x < -168 && location.y > 63 && location.y < 200){
-                a1 = true
+                a3 = true
                 player3.isHidden = true
             }
             if (location.x < -168 && location.y > -205 && location.y < -64){
@@ -186,14 +187,32 @@ class GameScene: SKScene {
                 player2.isHidden = true
             }
             if (location.x < -168 && location.y > -473 && location.y < -330){
-                a3 = true
+                a1 = true
                 player.isHidden = true
             }
             
+            // col 2
+            if (location.x > -59 && location.x < 55 && location.y > -67 && location.y < 68){
+                a4 = true
+                player4.isHidden = true
+            }
+            if (location.x > -59 && location.x < 55 && location.y > -340 && location.y < -200){
+                a5 = true
+                player5.isHidden = true
+            }
+            
+            // col 3
             if (location.x > 165 && location.y > 63 && location.y < 200){
-                a6 = true
+                a8 = true
                 player8.isHidden = true
-                print("YO")
+            }
+            if (location.x > 165 && location.y > -205 && location.y < -64){
+                a7 = true
+                player7.isHidden = true
+            }
+            if (location.x > 165 && location.y > -473 && location.y < -330){
+                a6 = true
+                player6.isHidden = true
             }
             /*else if(location.x > ((self.size.width/4))){
                 touchRight = true
