@@ -13,71 +13,150 @@ class GameScene: SKScene {
     
 
         
+    
+    
+    
+    // 1
+    
+    var player = SKSpriteNode()
+    
+    var player2 = SKSpriteNode()
+    
+    var player3 = SKSpriteNode()
+    
+    var player4 = SKSpriteNode()
+    
+    var player5 = SKSpriteNode()
+    
+    var player6 = SKSpriteNode()
+    
+    var player7 = SKSpriteNode()
+    
+    var player8 = SKSpriteNode()
+    
+    override func didMove(to view: SKView) {
+        
+        
+        
         // 1
-        var player = SKSpriteNode()
-        var player2 = SKSpriteNode()
-        override func didMove(to view: SKView) {
-            
-            // 1
-            backgroundColor = SKColor.white
-            let image = UIImage(named: "Samuel")
-            let texture = SKTexture(image: image!)
-            player = SKSpriteNode(texture: texture)
-            player.position = CGPoint(x: size.width * -0.3, y: size.height * -0.3)
-            addChild(player)
-
-            
-            // 2
-            backgroundColor = SKColor.white
-            _ = UIImage(named: "Samuel")
-            player2 = SKSpriteNode(texture: texture)
-            player2.position = CGPoint(x: size.width * -0.3, y: size.height * -0.1)
-            addChild(player2)
-
-            
-            //3
-            backgroundColor = SKColor.white
-            _ = UIImage(named: "Samuel")
-            player2 = SKSpriteNode(texture: texture)
-            player2.position = CGPoint(x: size.width * -0.3, y: size.height * 0.1)
-            addChild(player2)
-            
-            //4
-            backgroundColor = SKColor.white
-            _ = UIImage(named: "Samuel")
-            player2 = SKSpriteNode(texture: texture)
-            player2.position = CGPoint(x: size.width * 0, y: size.height * 0)
-            addChild(player2)
-            
-            //5
-            backgroundColor = SKColor.white
-            _ = UIImage(named: "Samuel")
-            player2 = SKSpriteNode(texture: texture)
-            player2.position = CGPoint(x: size.width * 0, y: size.height * -0.2)
-            addChild(player2)
-            
-             // 6
-             backgroundColor = SKColor.white
-              _ = UIImage(named: "Samuel")
-             player = SKSpriteNode(texture: texture)
-             player.position = CGPoint(x: size.width * 0.3, y: size.height * -0.3)
-             addChild(player)
-            
-            
-             // 7
-             backgroundColor = SKColor.white
-             _ = UIImage(named: "Samuel")
-             player2 = SKSpriteNode(texture: texture)
-             player2.position = CGPoint(x: size.width * 0.3, y: size.height * -0.1)
-             addChild(player2)
-            
-            
-             //8
-             backgroundColor = SKColor.white
-             _ = UIImage(named: "Samuel")
-             player2 = SKSpriteNode(texture: texture)
-             player2.position = CGPoint(x: size.width * 0.3, y: size.height * 0.1)
-             addChild(player2)
+        
+        backgroundColor = SKColor.white
+        
+        let image = UIImage(named: "Samuel")
+        
+        let texture = SKTexture(image: image!)
+        
+        player = SKSpriteNode(texture: texture)
+        
+        player.position = CGPoint(x: size.width * -0.3, y: size.height * -0.3)
+        
+        addChild(player)
+        
+        
+        
+        
+        
+        // 2
+        
+        backgroundColor = SKColor.white
+        
+        _ = UIImage(named: "Samuel")
+        
+        player2 = SKSpriteNode(texture: texture)
+        
+        player2.position = CGPoint(x: size.width * -0.3, y: size.height * -0.1)
+        
+        addChild(player2)
+        
+        
+        
+        
+        
+        //3
+        
+        backgroundColor = SKColor.white
+        
+        _ = UIImage(named: "Samuel")
+        
+        player3 = SKSpriteNode(texture: texture)
+        
+        player3.position = CGPoint(x: size.width * -0.3, y: size.height * 0.1)
+        
+        addChild(player3)
+        
+        
+        
+        //4
+        
+        backgroundColor = SKColor.white
+        
+        _ = UIImage(named: "Samuel")
+        
+        player4 = SKSpriteNode(texture: texture)
+        
+        player4.position = CGPoint(x: size.width * 0, y: size.height * 0)
+        
+        addChild(player4)
+        
+        
+        
+        //5
+        
+        backgroundColor = SKColor.white
+        
+        _ = UIImage(named: "Samuel")
+        
+        player5 = SKSpriteNode(texture: texture)
+        
+        player5.position = CGPoint(x: size.width * 0, y: size.height * -0.2)
+        
+        addChild(player5)
+        
+        
+        
+        // 1
+        
+        backgroundColor = SKColor.white
+        
+        _ = UIImage(named: "Samuel")
+        
+        player6 = SKSpriteNode(texture: texture)
+        
+        player6.position = CGPoint(x: size.width * 0.3, y: size.height * -0.3)
+        
+        addChild(player6)
+        
+        
+        
+        
+        
+        // 2
+        
+        backgroundColor = SKColor.white
+        
+        _ = UIImage(named: "Samuel")
+        
+        player7 = SKSpriteNode(texture: texture)
+        
+        player7.position = CGPoint(x: size.width * 0.3, y: size.height * -0.1)
+        
+        addChild(player7)
+        
+        
+        
+        
+        
+        //3
+        
+        backgroundColor = SKColor.white
+        
+        _ = UIImage(named: "Samuel")
+        
+        player8 = SKSpriteNode(texture: texture)
+        
+        player8.position = CGPoint(x: size.width * 0.3, y: size.height * 0.1)
+        
+        addChild(player8)
             
  
             
@@ -98,9 +177,23 @@ class GameScene: SKScene {
             let location = touch.location(in: self)
             print("x- \(location.x), y- \(location.y)")
             
-            if(location.x < -168 && location.y > 0.7){
+            if (location.x < -168 && location.y > 63 && location.y < 200){
                 a1 = true
-                print("Left")
+                player3.isHidden = true
+            }
+            if (location.x < -168 && location.y > -205 && location.y < -64){
+                a2 = true
+                player2.isHidden = true
+            }
+            if (location.x < -168 && location.y > -473 && location.y < -330){
+                a3 = true
+                player.isHidden = true
+            }
+            
+            if (location.x > 165 && location.y > 63 && location.y < 200){
+                a6 = true
+                player8.isHidden = true
+                print("YO")
             }
             /*else if(location.x > ((self.size.width/4))){
                 touchRight = true
