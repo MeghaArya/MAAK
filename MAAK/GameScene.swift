@@ -11,7 +11,14 @@ import GameplayKit
 
 class GameScene: SKScene {
     
-
+    var a1 : Bool = false
+    var a2 : Bool = false
+    var a3 : Bool = false
+    var a4 : Bool = false
+    var a5 : Bool = false
+    var a6 : Bool = false
+    var a7 : Bool = false
+    var a8 : Bool = false
         
     
     
@@ -19,23 +26,15 @@ class GameScene: SKScene {
     // 1
     
     var player = SKSpriteNode()
-    
     var player2 = SKSpriteNode()
-    
     var player3 = SKSpriteNode()
-    
     var player4 = SKSpriteNode()
-    
     var player5 = SKSpriteNode()
-    
     var player6 = SKSpriteNode()
-    
     var player7 = SKSpriteNode()
-    
     var player8 = SKSpriteNode()
     
     override func didMove(to view: SKView) {
-        
         
         
         // 1
@@ -54,8 +53,6 @@ class GameScene: SKScene {
         
         
         
-        
-        
         // 2
         
         backgroundColor = SKColor.white
@@ -67,8 +64,6 @@ class GameScene: SKScene {
         player2.position = CGPoint(x: size.width * -0.3, y: size.height * -0.1)
         
         addChild(player2)
-        
-        
         
         
         
@@ -127,9 +122,6 @@ class GameScene: SKScene {
         addChild(player6)
         
         
-        
-        
-        
         // 2
         
         backgroundColor = SKColor.white
@@ -144,8 +136,6 @@ class GameScene: SKScene {
         
         
         
-        
-        
         //3
         
         backgroundColor = SKColor.white
@@ -157,25 +147,25 @@ class GameScene: SKScene {
         player8.position = CGPoint(x: size.width * 0.3, y: size.height * 0.1)
         
         addChild(player8)
-            
- 
-            
+        
         }
     
     override func touchesBegan(_ touches: Set<UITouch>,with event: UIEvent?){
-        var a1 : Bool = false
-        var a2 : Bool = false
-        var a3 : Bool = false
-        var a4 : Bool = false
-        var a5 : Bool = false
-        var a6 : Bool = false
-        var a7 : Bool = false
-        var a8 : Bool = false
+    
         
         for touch in (touches) {
             //let location = touch.location(in: self.camera)
             let location = touch.location(in: self)
-            print("x- \(location.x), y- \(location.y)")
+            //print("x- \(location.x), y- \(location.y)")
+            
+            a1 = false
+            a2 = false
+            a3 = false
+            a4 = false
+            a5 = false
+            a6 = false
+            a7 = false
+            a8 = false
             
             // col 1
             if (location.x < -168 && location.y > 63 && location.y < 200){
@@ -214,16 +204,10 @@ class GameScene: SKScene {
                 a6 = true
                 player6.isHidden = true
             }
-            /*else if(location.x > ((self.size.width/4))){
-                touchRight = true
-                print("Right")
-            }
-            else {  //x is between -width / 4 and width / 4
-                touchMiddle = true
-                print("Middle")
-            }*/
         }
     }
+    
+    //var duration =
     
     
     
