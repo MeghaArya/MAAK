@@ -11,12 +11,23 @@ import SpriteKit
 import GameplayKit
 
 class GameViewController: UIViewController {
+    
+    var timer: Timer?
+    
+    
+    
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
        
+    //    show("GameScene.swift") as? GameScene {
             
-            if let view = self.view as! SKView? {
+            // Configure the view code
+            
+        
+        
+           if let view = self.view as! SKView? {
                 // Load the SKScene from 'GameScene.sks'
                 let scene = SKScene(fileNamed: "GameScene")
                 scene?.scaleMode = .aspectFill
@@ -25,7 +36,20 @@ class GameViewController: UIViewController {
                 view.ignoresSiblingOrder = true
                 view.showsFPS = true
                 view.showsNodeCount = true
+            
+       
+            
+            
+            
             }
+        
+        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
+            let index = Int(arc4random_uniform(UInt32(7)))
+        //    print(index)
+            //  var index:Int=0
+            let scene = GameScene.init()
+            scene.show3(num:index)
+        }
         
         
         

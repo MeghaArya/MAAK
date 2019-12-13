@@ -11,6 +11,12 @@ import GameplayKit
 
 class GameScene: SKScene {
     
+    func show3(num:Int){
+        print(num)
+    }
+    
+    var viewController: GameViewController!
+    
     var a1 : Bool = false
     var a2 : Bool = false
     var a3 : Bool = false
