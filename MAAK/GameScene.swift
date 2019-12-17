@@ -11,8 +11,38 @@ import GameplayKit
 
 class GameScene: SKScene {
     
-    func show3(num:Int){
+
+    
+    
+    var num:Int = 0
+    var oldNum=10
+    
+    func show3(num2:Int){
+       print(num2)
+       num=num2+1
         print(num)
+        
+        switch num{
+        case 1:
+            //   player.isHidden=false
+            print("switch1")
+            player.isHidden=false
+        case 2:
+            //   player.isHidden=false
+            print("switch2")
+        case 3:
+            // player.isHidden=false
+            print("switch3")
+            
+        case 4:
+            //   player.isHidden=false
+            print("switch4")
+        case 5:
+            //   player.isHidden=false`
+            print("switch5")
+        default:
+            print("hey")
+        }
     }
     
     var viewController: GameViewController!
@@ -39,10 +69,21 @@ class GameScene: SKScene {
     var player6 = SKSpriteNode()
     var player7 = SKSpriteNode()
     var player8 = SKSpriteNode()
+   
+   
     
     override func didMove(to view: SKView) {
         
+        player.isHidden=true
+        player2.isHidden=true
+        player3.isHidden=true
+        player4.isHidden=true
+        player5.isHidden=true
+        player6.isHidden=true
+        player7.isHidden=true
+         player8.isHidden=true
         
+    
         // 1
         
         backgroundColor = SKColor.white
@@ -159,7 +200,21 @@ class GameScene: SKScene {
     override func touchesBegan(_ touches: Set<UITouch>,with event: UIEvent?){
     
         
+      
+        
+      //  print(num)
+
+
+        
+    
+        
+        
+        
+
         for touch in (touches) {
+            
+         
+            
             //let location = touch.location(in: self.camera)
             let location = touch.location(in: self)
             //print("x- \(location.x), y- \(location.y)")
@@ -336,9 +391,12 @@ class GameScene: SKScene {
         
         // Update entities
         for entity in self.entities {
+            
+         // print("time \(currentTime)")
+
             entity.update(deltaTime: dt)
+            
         }
-        
         self.lastUpdateTime = currentTime
     }
 }
