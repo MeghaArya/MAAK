@@ -57,7 +57,7 @@ class GameScene: SKScene {
  
     override func didMove(to view: SKView) {
         
-      
+       
         
         // 1
         
@@ -170,6 +170,20 @@ class GameScene: SKScene {
         
         addChild(player8)
         
+        backgroundColor = SKColor.white
+        
+        let pic = UIImage(named: "download")
+        let texture1 = SKTexture(image: pic!)
+        clickHere = SKSpriteNode(texture: texture1)
+    
+        clickHere=SKSpriteNode(texture: texture)
+        clickHere.position = CGPoint(x: size.width * 0, y: size.height * 0.1)
+        
+        addChild(clickHere)
+        
+       // clickHere.isHidden=true
+        
+        
         player.isHidden=true
         player2.isHidden=true
         player3.isHidden=true
@@ -218,7 +232,7 @@ class GameScene: SKScene {
     
     override func touchesBegan(_ touches: Set<UITouch>,with event: UIEvent?){
     
-        
+        clickHere.isHidden=true
         for index in 1...10 {
         
       //  print(num)
