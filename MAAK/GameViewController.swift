@@ -48,7 +48,7 @@ class GameViewController: UIViewController {
         //    print(index)
             //  var index:Int=0
             let scene = GameScene.init()
-            scene.show3(num2:index)
+        //    scene.show3(num2:index)
         }
         
         

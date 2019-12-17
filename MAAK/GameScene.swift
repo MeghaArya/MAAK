@@ -14,37 +14,11 @@ class GameScene: SKScene {
 
     
     
+    
     var num:Int = 0
     var oldNum=10
     
-    func show3(num2:Int){
-       print(num2)
-       num=num2+1
-        print(num)
-        
-        switch num{
-        case 1:
-            //   player.isHidden=false
-            print("switch1")
-            player.isHidden=false
-        case 2:
-            //   player.isHidden=false
-            print("switch2")
-        case 3:
-            // player.isHidden=false
-            print("switch3")
-            
-        case 4:
-            //   player.isHidden=false
-            print("switch4")
-        case 5:
-            //   player.isHidden=false`
-            print("switch5")
-        default:
-            print("hey")
-        }
-    }
-    
+  
     var viewController: GameViewController!
     
     var a1 : Bool = false
@@ -69,19 +43,12 @@ class GameScene: SKScene {
     var player6 = SKSpriteNode()
     var player7 = SKSpriteNode()
     var player8 = SKSpriteNode()
-   
-   
     
+    var clickHere=SKSpriteNode()
+   
+   
+ 
     override func didMove(to view: SKView) {
-        
-        player.isHidden=true
-        player2.isHidden=true
-        player3.isHidden=true
-        player4.isHidden=true
-        player5.isHidden=true
-        player6.isHidden=true
-        player7.isHidden=true
-         player8.isHidden=true
         
     
         // 1
@@ -195,16 +162,111 @@ class GameScene: SKScene {
         
         addChild(player8)
         
+        player.isHidden=true
+        player2.isHidden=true
+        player3.isHidden=true
+        player4.isHidden=true
+        player5.isHidden=true
+        player6.isHidden=true
+        player7.isHidden=true
+        player8.isHidden=true
+        
+        
+        
         }
+    
+    
+  /*  func show3(num2:Int){
+        
+        // print(num2)
+        // num=num2+1
+        num=1
+        print(num)
+        
+        switch num{
+        case 1:
+            //   player.isHidden=false
+            player.isHidden=false
+            print(player.isHidden)
+            
+        case 2:
+            //   player.isHidden=false
+            print("switch2")
+        case 3:
+            // player.isHidden=false
+            print("switch3")
+            
+        case 4:
+            //   player.isHidden=false
+            print("switch4")
+        case 5:
+            //   player.isHidden=false`
+            print("switch5")
+        default:
+            print("hey")
+        }}*/
+    
+    var num1:Int = 0
     
     override func touchesBegan(_ touches: Set<UITouch>,with event: UIEvent?){
     
         
-      
+        for index in 1...5{
         
       //  print(num)
+         num1 = Int(arc4random_uniform(UInt32(9)))
+        switch num1{
+        case 1:
+            //   player.isHidden=false
+            player.isHidden=false
+            print(player.isHidden)
+ 
+            
+        case 2:
+            //   player.isHidden=false
+            print("switch2")
+            player2.isHidden=false
+            print(player2.isHidden)
 
-
+            
+        case 3:
+            // player.isHidden=false
+            print("switch3")
+            player3.isHidden=false
+            print(player3.isHidden)
+     
+            
+        case 4:
+            //   player.isHidden=false
+            print("switch4")
+            player4.isHidden=false
+            print(player4.isHidden)
+        case 5:
+            //   player.isHidden=false`
+            print("switch5")
+            player5.isHidden=false
+            print(player5.isHidden)
+        case 6:
+            //   player.isHidden=false`
+            print("switch5")
+            player6.isHidden=false
+            print(player6.isHidden)
+        case 7:
+            //   player.isHidden=false`
+            print("switch5")
+            player7.isHidden=false
+            print(player7.isHidden)
+        case 8:
+            //   player.isHidden=false`
+            print("switch8")
+            player8.isHidden=false
+            print(player8.isHidden)
+        default:
+            print("hey")
+        
+   
+        }
+        }
         
     
         
@@ -237,7 +299,7 @@ class GameScene: SKScene {
                 a2 = true
                 player2.isHidden = true
             }
-            if (location.x < -168 && location.y > -473 && location.y < -330){
+           if (location.x < -168 && location.y > -473 && location.y < -330){
                 a1 = true
                 player.isHidden = true
             }
