@@ -50,7 +50,8 @@ class GameScene: SKScene {
  
     override func didMove(to view: SKView) {
         
-    
+      
+        
         // 1
         
         backgroundColor = SKColor.white
