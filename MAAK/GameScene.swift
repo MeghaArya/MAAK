@@ -173,7 +173,7 @@ class GameScene: SKScene {
         backgroundColor = SKColor.white
         
         let pic = UIImage(named: "download")
-        let texture1 = SKTexture(image: pic!)
+        let texture1 = SKTexture(image: image!)
         clickHere = SKSpriteNode(texture: texture1)
     
         clickHere=SKSpriteNode(texture: texture)
@@ -231,6 +231,13 @@ class GameScene: SKScene {
     var num1:Int = 0
     
     override func touchesBegan(_ touches: Set<UITouch>,with event: UIEvent?){
+        if let label = self.label {
+            label.run(SKAction.init(named: "Pulse")!, withKey: "fadeInOut")
+        }
+        
+        for t in touches { self.touchDown(atPoint: t.location(in: self)) }
+        
+
     
         clickHere.isHidden=true
         for index in 1...10 {
@@ -441,11 +448,13 @@ class GameScene: SKScene {
         self.lastUpdateTime = 0
         
         // Get label node from scene and store it for use later
-       // self.label = self.childNode(withName: "//helloLabel") as? SKLabelNode
-        /*if let label = self.label {
+        label?.color=SKColor.black
+       self.label = self.childNode(withName: "//helloLabel") as? SKLabelNode
+        if let label = self.label {
             label.alpha = 0.0
             label.run(SKAction.fadeIn(withDuration: 2.0))
-        }*/
+        }
+        
         
         // Create shape node to use during mouse interaction
         let w = (self.size.width + self.size.height) * 0.05
@@ -486,13 +495,7 @@ class GameScene: SKScene {
         }
     }
     
-    /*override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if let label = self.label {
-            label.run(SKAction.init(named: "Pulse")!, withKey: "fadeInOut")
-        }
-        
-        for t in touches { self.touchDown(atPoint: t.location(in: self)) }
-    }*/
+
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         for t in touches { self.touchMoved(toPoint: t.location(in: self)) }
