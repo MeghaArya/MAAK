@@ -219,7 +219,7 @@ class GameScene: SKScene {
     override func touchesBegan(_ touches: Set<UITouch>,with event: UIEvent?){
     
         
-        for index in 1...5{
+        for index in 1...10 {
         
       //  print(num)
          num1 = Int(arc4random_uniform(UInt32(9)))
@@ -369,7 +369,7 @@ class GameScene: SKScene {
             {
                 points += 1
             }
-            print(points)
+            print("points \(points)")
             
             oldHidden1 = player.isHidden
             oldHidden2 = player2.isHidden
