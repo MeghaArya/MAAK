@@ -29,9 +29,16 @@ class GameScene: SKScene {
     var a6 : Bool = false
     var a7 : Bool = false
     var a8 : Bool = false
-        
     
-    
+    var points = 0;
+    var oldHidden1 = false;
+    var oldHidden2 = false;
+    var oldHidden3 = false;
+    var oldHidden4 = false;
+    var oldHidden5 = false;
+    var oldHidden6 = false;
+    var oldHidden7 = false;
+    var oldHidden8 = false;
     
     // 1
     
@@ -328,10 +335,55 @@ class GameScene: SKScene {
                 a6 = true
                 player6.isHidden = true
             }
+            
+            
+            if (a1 && !oldHidden1 && (player.isHidden))
+            {
+                points += 1
+            }
+            if (a2 && !oldHidden2 && (player2.isHidden))
+            {
+                points += 1
+            }
+            if (a3 && !oldHidden3 && (player3.isHidden))
+            {
+                points += 1
+            }
+            if (a4 && !oldHidden4 && (player4.isHidden))
+            {
+                points += 1
+            }
+            if (a5 && !oldHidden5 && (player5.isHidden))
+            {
+                points += 1
+            }
+            if (a6 && !oldHidden6 && (player6.isHidden))
+            {
+                points += 1
+            }
+            if (a7 && !oldHidden7 && (player7.isHidden))
+            {
+                points += 1
+            }
+            if (a8 && !oldHidden8 && (player8.isHidden))
+            {
+                points += 1
+            }
+            print(points)
+            
+            oldHidden1 = player.isHidden
+            oldHidden2 = player2.isHidden
+            oldHidden3 = player3.isHidden
+            oldHidden4 = player4.isHidden
+            oldHidden5 = player5.isHidden
+            oldHidden6 = player6.isHidden
+            oldHidden7 = player7.isHidden
+            oldHidden8 = player8.isHidden
+            
         }
     }
     
-    //var duration =
+    
     
     
     
@@ -376,10 +428,10 @@ class GameScene: SKScene {
         
         // Get label node from scene and store it for use later
        // self.label = self.childNode(withName: "//helloLabel") as? SKLabelNode
-        if let label = self.label {
+        /*if let label = self.label {
             label.alpha = 0.0
             label.run(SKAction.fadeIn(withDuration: 2.0))
-        }
+        }*/
         
         // Create shape node to use during mouse interaction
         let w = (self.size.width + self.size.height) * 0.05
